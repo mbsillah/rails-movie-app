@@ -1,2 +1,16 @@
-<h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h1>Movies</h1>
+
+<% @movies.each do |movie| %>
+    <div>
+      <div><%= movie.title %></div>
+      <div>Rating: <%= movie.rating %></div>
+      <div>Year: <%= movie.release_year %></div>
+      <div><%= link_to 'Remove From Favorites', movie, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+
+
+    </div>
+
+    <br />
+<% end %>
